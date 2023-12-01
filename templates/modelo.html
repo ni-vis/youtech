@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <script src="https://kkit.fontawesome.com/27b9c83134.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="../static/img/logos/favicon.ico" type="image/x-icon">
+
+  <title>Trabalhe Conosco | YouTech</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+    body {
+      font-family: 'Varela Round', Geneva, Tahoma, sans-serif;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column" style="min-height:100vh;">
+
+  <!-- menu inicio -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2a494d;">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="../static/img/logos/4.png" alt="Logo" height="100px">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fs-5">
+          <li class="nav-item">
+            <a class="nav-link text-light text-uppercase" id='menu' href="/">ínicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light text-uppercase" id='menu' href="/construcao">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light text-uppercase" id='menu' href="/construcao">Soluções</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light text-uppercase" id='menu' href="/construcao">Suporte</a>
+          </li>
+        </ul>
+        <!-- * modal retirado da documentação do bootstrap *-->
+        <!-- inicio Botao form -->
+        <button type="button" class="btn text-white fs-2 bi bi-search" id='menu' data-bs-toggle="modal"
+          data-bs-target="#exampleModal"></button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Procure por Novas Vagas</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form class="d-flex" role="search" action="/busca" method="post">
+                  <input class="form-control me-2" id='form' type="search" placeholder="Vaga, Local..."
+                    aria-label="Search" name="buscar">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button id='search' class="btn" style="background-color: #2a494d;" type="submit"><i
+                          class="bi bi-search fs-7 fw-bold text-white "></i></button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fim Botao form -->
+      </div>
+    </div>
+  </nav>
+  <!-- menu fim -->
+
+  <main class="flex-fill pb-5">
+    {% block conteudo %}
+
+    {% endblock %}
+  </main>
+
+  <!-- incio Footer -->
+
+  <footer id='footer' class="bg-info text-center text-light" style="background-color: #2a494d;">
+    <div class="container-fluid p-4" style="background-color: #2a494d;">
+      <!-- icone inicio -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="efeitohover" href='https://pt-br.facebook.com/login/device-based/regular/login/'><i
+            class="bi bi-facebook"></i></a>
+        <!-- Twitter -->
+        <a class="efeitohover" href="https://twitter.com/login?lang=pt"><i class=" m-1 bi bi-twitter-x"></i></a>
+        <!-- Google -->
+        <a class="efeitohover" href="https://www.google.com.br/?hl=pt-BR"><i class=" m-1 bi bi-google"></i></a>
+        <!-- Instagram -->
+        <a class="efeitohover" href="https://www.instagram.com/"><i class=" m-1 bi bi-instagram"></i></a>
+        <!-- Linkedin -->
+        <a class="efeitohover" href="https://br.linkedin.com/"><i class=" m-1 bi bi-linkedin"></i></a>
+        <!-- Github -->
+        <a class="efeitohover" href="https://github.com/"><i class=" m-1 bi bi-github"></i></a>
+      </section>
+      <!-- inicio duvidas-->
+      <section>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">DÚVIDAS</h5>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Perguntas Frequentes</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Formas de Pagamento</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Mapa do Site</a>
+              </li>
+          </div>
+          <!-- fim duvidas-->
+
+          <!-- inicio institucional -->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">INSTITUCIONAL</h5>
+
+            <ul class="list-unstyled mb-0 text-light">
+              <li>
+                <a class="text-white text-decoration-none" href="/empresa">Nossa História </a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/">Trabalhe Conosco</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Clube Tech</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Blog</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/adm">Adiministrador</a>
+              </li>
+            </ul>
+          </div>
+          <!-- fim institucional -->
+
+          <!-- inicio links  uteis-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">LINKS ÚTEIS</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Política de Privacidade</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Proteja-se Contra Fraudes</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Preferências de Cookies</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Alerta Sobre Segurança</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none"
+                  href="https://www.consumidor.gov.br/pages/principal/?1700584514190">consumidor.gov</a>
+              </li>
+            </ul>
+          </div>
+          <!-- fim links  uteis-->
+
+          <!-- inicio cliente-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="background-color: #2a494d;">
+            <h5 class="text-uppercase">RELACIONAMENTO COM O CLIENTE</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Contato pelo Whatsapp</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/construcao">Marque uma Visita</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none"
+                  href="https://drive.google.com/file/d/1IhVgglt-F6HhAn_M_I24bcKBGNYcVjQ3/view?usp=sharing">Desenvolvedores</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- fim cliente-->
+    </div>
+    <div class="text-center p-3" style="background-color: #2a494d;">
+      © 2023
+      YouTech | SESI SENAI</a>
+    </div>
+
+  </footer>
+
+
+  <!-- Scripts do Bootstrap (necessários para funcionalidades como o menu responsivo e o carrossel) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

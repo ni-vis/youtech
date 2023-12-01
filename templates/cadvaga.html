@@ -1,0 +1,247 @@
+{% extends 'modelo.html' %}
+{% block conteudo %}
+
+<div id='vagasCad' class="container">
+    <div class="row justify-content-center text-center">
+        <h1 class="mb-3 display-4">Cadastro de novas vagas:</h1>
+        <form action="/cadastro" method="post" enctype="multipart/form-data"
+            class="col-10 col-md-8 col-lg-6 text-center needs-validation" novalidate>
+            <div class="form-floating mb-2">
+                <input type="text" name="tipo_vaga" id="tipo_vaga" class="form-control" required placeholder=""
+                    autofocus />
+                <label for="tipo_vaga">Vaga: </label>
+                <div class="invalid-feedback">Informe qual é o tipo de vaga: </div>
+                <script>
+                    document.getElementById('tipo_vaga').addEventListener('input', function () {
+                        // Obtém o valor do campo
+                        var inputValue = this.value;
+
+                        // Verifica se o valor não está vazio
+                        if (inputValue.length > 0) {
+                            // Capitaliza a primeira letra
+                            inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+
+                            // Atualiza o valor do campo
+                            this.value = inputValue;
+                        }
+                    });
+                </script>
+            </div>
+
+            <div class="form-floating mb-2">
+                <input type="text" name="cargo_vaga" id="cargo_vaga" class="form-control" required placeholder="" />
+                <label for="cargo_vaga">Cargo: </label>
+                <div class="invalid-feedback">Informe qual é o cargo: </div>
+                <script>
+                    document.getElementById('cargo_vaga').addEventListener('input', function () {
+                        // Obtém o valor do campo
+                        var inputValue = this.value;
+
+                        // Verifica se o valor não está vazio
+                        if (inputValue.length > 0) {
+                            // Capitaliza a primeira letra
+                            inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+
+                            // Atualiza o valor do campo
+                            this.value = inputValue;
+                        }
+                    });
+                </script>
+            </div>
+
+            <div class='form-floating mb-2'>
+                <input name='requisitos_vaga' id="requisitos_vaga" class='form-control' required placeholder=''
+                    style='height: 100px'></input>
+                <label for="requisitos_vaga">Requisitos: </label>
+                <div class='invalid-feedback'>
+                    Você Deve Informar A Descrição Do Produto
+                </div>
+                <script>
+                    document.getElementById('requisitos_vaga').addEventListener('input', function () {
+                        // Obtém o valor do campo
+                        var inputValue = this.value;
+
+                        // Verifica se o valor não está vazio
+                        if (inputValue.length > 0) {
+                            // Capitaliza a primeira letra
+                            inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+
+                            // Atualiza o valor do campo
+                            this.value = inputValue;
+                        }
+                    });
+                </script>
+            </div>
+
+            <div class="form-floating mb-2">
+                <input type="text" name="desc_vaga" id="desc_vaga" class="form-control" required placeholder="" />
+                <label for="desc_vaga">Descrição: </label>
+                <div class="invalid-feedback">Informe uma breve descrição: </div>
+                <script>
+                    document.getElementById('desc_vaga').addEventListener('input', function () {
+                        // Obtém o valor do campo
+                        var inputValue = this.value;
+
+                        // Verifica se o valor não está vazio
+                        if (inputValue.length > 0) {
+                            // Capitaliza a primeira letra
+                            inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+
+                            // Atualiza o valor do campo
+                            this.value = inputValue;
+                        }
+                    });
+                </script>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">R$</span>
+                        <div class="form-floating">
+                            <input type="text" name="salario_vaga" id="salario_vaga" class="form-control" required
+                                placeholder="" oninput="validarNumero(this)" />
+                            <label for="salario_vaga">Salário: </label>
+                            <small id="aviso" class="text-muted">Apenas números são permitidos.</small>
+                            <div class="invalid-feedback">Você deve informar o salário: </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- funcãozinha para validação de apenas caracteres numericos -->
+            <script>
+                function validarNumero(input) {
+                    var valorAtual = input.value;
+
+                    // Remove caracteres não numéricos e não pontos
+                    var valorNumerico = valorAtual.replace(/[^0-9.]/g, '');
+                    // Garante que não há mais de um ponto decimal
+                    valorNumerico = valorNumerico.replace(/(\..*)\./g, '$1');
+                    // Se o valor atual for diferente do valor numérico, exibe o aviso
+                    if (valorAtual !== valorNumerico) {
+                        document.getElementById('aviso').style.display = 'inline';
+
+                    } else {
+                        document.getElementById('aviso').style.display = 'none';
+
+                    }
+                    // Atualiza o valor no campo de entrada
+                    input.value = valorNumerico;
+
+                }
+            </script>
+
+            <div class="form-floating mb-2">
+                <input type="text" name="local_vaga" id="local_vaga" class="form-control" required placeholder="" />
+                <label for="local_vaga">Local: </label>
+                <div class="invalid-feedback">Informe qual é o local de trabalho: </div>
+                <script>
+                    document.getElementById('local_vaga').addEventListener('input', function () {
+                        // Obtém o valor do campo
+                        var inputValue = this.value;
+
+                        // Verifica se o valor não está vazio
+                        if (inputValue.length > 0) {
+                            // Capitaliza a primeira letra
+                            inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+
+                            // Atualiza o valor do campo
+                            this.value = inputValue;
+                        }
+                    });
+                </script>
+            </div>
+
+            <div class="form-floating mb-2">
+                <input type="email" name="email_vaga" id="email_vaga" class="form-control" required placeholder="" />
+                <label for="email_vaga">E-mail: </label>
+                <div class="invalid-feedback">Informe um E-mail válido.</div>
+                <small id="aviso-email" class="text-muted">Certifique-se de fornecer um e-mail válido.</small>
+            </div>
+            <!--para ficar letras maiusculas-->
+            <script>
+                document.getElementById('local_vaga').addEventListener('input', function () {
+                    // Obtém o valor do campo
+                    var inputValue = this.value;
+
+                    // Verifica se o valor não está vazio
+                    if (inputValue.length > 0) {
+                        // Capitaliza a primeira letra
+                        inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
+
+                        // Atualiza o valor do campo
+                        this.value = inputValue;
+                    }
+                });
+            </script>
+            <!-- funcãozinha para validação de apenas email (@) -->
+            <script>
+                document.getElementById("email_vaga").addEventListener("input", function () {
+                    var input = this;
+                    var valorAtual = input.value;
+                    // Exibe o aviso se o formato do e-mail não for válido
+                    if (!input.checkValidity()) {
+                        document.getElementById("aviso-email").style.display = "inline"
+                    } else {
+                        document.getElementById("aviso-email").style.display = "none"
+                    }
+                });
+            </script>
+
+
+            <div class="col-12 col-md-12">
+                <div class="input-group m2-3">
+                    <span class="input-group-text"><i class="bi bi-file-image"></i></span>
+                    <div class="form-floating">
+                        <input type="file" name="img_vaga" id="img_vaga" accept="image/jpeg,image/png" required
+                            class="form-control" />
+                        <div class="invalid-feedback">Você deve enviar uma foto para realizar o cadastro:</div>
+                    </div>
+                </div>
+            </div>
+            <input id='acesso' type="submit" class="mt-3 btn btn-lg btn-outline justify-content-center"
+                value="CADASTRAR" />
+        </form>
+    </div>
+    </form>
+</div>
+</div>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+
+    function validarNumero(input) {
+        var valorAtual = input.value;
+
+        // Remove caracteres não numéricos e não pontos
+        var valorNumerico = valorAtual.replace(/[^0-9.]/g, '');
+        // Garante que não há mais de um ponto decimal
+        valorNumerico = valorNumerico.replace(/(\..*)\./g, '$1');
+        // Se o valor atual for diferente do valor numérico, exibe o aviso
+        if (valorAtual !== valorNumerico) {
+            document.getElementById('aviso').style.display = 'inline';
+        } else {
+            document.getElementById('aviso').style.display = 'none';
+        }
+        // Atualiza o valor no campo de entrada
+        input.value = valorNumerico;
+    }
+</script>
+{% endblock %}
