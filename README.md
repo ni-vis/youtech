@@ -38,7 +38,7 @@ Para executar o projeto localmente, siga os passos abaixo:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/amanda3620/Projeto-Youtech
+   git clone https://github.com/ni-vis/youtech
 
 ## Instale as dependências:
 cd youtech
